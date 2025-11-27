@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Usuarios</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Usuarios Registrados</h2>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Acciones</th>
+        </tr>
+
+        <% users.forEach(u => { %>
+            <tr>
+                <td><%= u.id %></td>
+                <td><%= u.name %></td>
+                <td><%= u.email %></td>
+                <td>
+                    <a class="action-btn edit-btn" href="/lista/edit/<%= u.id %>">Editar</a> |
+                    <a class="action-btn delete-btn" href="/lista/delete/<%= u.id %>" onclick="return confirm('¿Eliminar este usuario?')">Eliminar</a>
+                </td>
+            </tr>
+        <% }) %>
+    </table>
+
+    <hr>
+
+    <h3>Agregar Usuario</h3>
+
+    <form action="/lista/add" method="POST">
+        <input type="text" name="name" placeholder="Nombre" required>
+        <input type="email" name="email" placeholder="Email" required>
+
+        <button type="submit">Agregar</button>
+    </form>
+
+    <hr>
+
+    <% if (usuarioEditar) { %>
+        <h3>Editando usuario ID <%= usuarioEditar.id %></h3>
+
+        <form action="/lista/update/<%= usuarioEditar.id %>" method="POST">
+            <input type="text" name="name" value="<%= usuarioEditar.name %>" required>
+            <input type="email" name="email" value="<%= usuarioEditar.email %>" required>
+
+            <button type="submit">Guardar cambios</button>
+            <a href="/lista">Cancelar</a>
+        </form>
+    <% } %>
+
+    <hr>
+    <a href="/users/logout">Cerrar sesión</a>
+
+</div>
+
+</body>
+</html>

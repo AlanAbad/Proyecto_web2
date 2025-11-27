@@ -1,0 +1,158 @@
+/* ESTILOS GENERALES */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", Arial, sans-serif;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenedor principal para login/registro*/
+.auth-container {
+    background: white;
+    width: 380px;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    text-align: center;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+
+/* Títulos */
+h2, h3 {
+    color: #444;
+    margin-bottom: 15px;
+}
+
+/* Entradas */
+input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin: 10px 0;
+    font-size: 15px;
+    transition: .2s;
+}
+
+input:focus {
+    border-color: #2575fc;
+    box-shadow: 0 0 6px rgba(37,117,252,0.5);
+    outline: none;
+}
+
+/* Botones principales */
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: #2575fc;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: .2s;
+}
+
+button:hover {
+    background: #1d5fc4;
+    transform: scale(1.02);
+}
+
+/* Links */
+a {
+    color: #2575fc;
+    text-decoration: none;
+    font-weight: bold;
+    transition: .2s;
+}
+
+a:hover {
+    color: #1b4ea3;
+}
+
+/* ESTILOS PARA LA LISTA DE USUARIOS */
+
+.container {
+    background: white;
+    width: 90%;
+    max-width: 850px;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    margin: 40px auto;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+}
+
+table th {
+    background: #2575fc;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+}
+
+table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+table tr:hover {
+    background: #f1f7ff;
+}
+
+/* Botones de acciones (editar/eliminar) */
+.action-btn {
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.edit-btn {
+    background: #ffb400;
+    color: white;
+}
+
+.delete-btn {
+    background: #ff3d3d;
+    color: white;
+}
+
+.edit-btn:hover {
+    background: #d99a00;
+}
+
+.delete-btn:hover {
+    background: #d93434;
+}
+
+/* Formulario para agregar */
+form input[type="text"],
+form input[type="email"] {
+    max-width: 350px;
+}
+
+/* Botón Cancelar */
+.container a {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 25px;
+    }
+}
